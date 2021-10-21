@@ -42,7 +42,9 @@ public class EnemyScript : MonoBehaviour
     {
         PlayerStats.Money += moneyLoot;
         Instantiate<ParticleSystem>(deathFX, transform.position, Quaternion.identity);
+        WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
+
     }
 
     
