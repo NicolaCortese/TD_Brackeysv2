@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public Text wavesText;
+    public SceneFader sceneFader;
 
     private void OnEnable()
     {
@@ -12,11 +13,11 @@ public class GameOver : MonoBehaviour
     }
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        sceneFader.FadeTo(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Menu() 
-    {
-        Debug.Log("Menu");
+    {        
+        sceneFader.FadeTo(0);
     }
 }

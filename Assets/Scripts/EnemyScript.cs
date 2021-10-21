@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -9,14 +8,19 @@ public class EnemyScript : MonoBehaviour
 
     [Header("Tune")]
 
-    public float health = 100;
+    public float startingHealth = 100;
     public int moneyLoot = 50;
     public float startSpeed = 10f;
-    [HideInInspector]public float speed;
+    [HideInInspector] public float speed;
+    private float currentHealth;
+
+    [Header("Unity Stuff")]
+    public Image healthBar;
 
     private void Start()
     {
         speed = startSpeed;
+        currentHealth = startingHealth;
     }
 
     public void Slow (float slowAmount)
@@ -26,8 +30,9 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage (float amount)
     {
-        health -= amount;
-        if (health <= Mathf.Epsilon)
+        currentHealth -= amount;
+        healthBar.fillAmount = currentHealth/startingHealth;
+        if (currentHealth <= Mathf.Epsilon)
         {
             EnemyDeath();
         }

@@ -17,6 +17,11 @@ public class BuildManager : MonoBehaviour
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
 
+    public ParticleSystem buildFX;
+    public ParticleSystem upgradeFX;
+    public ParticleSystem sellFX;
+    public ParticleSystem sellDebrisFX;
+
     public NodeUI nodeUI;
 
     public bool canBuild { get { return turretToBuild != null; } }

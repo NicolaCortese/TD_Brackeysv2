@@ -111,10 +111,13 @@ MonoBehaviour:
   hoverColour: {r: 0.4753503, g: 0.8679245, b: 0.3234247, a: 0}
   buildFX: {fileID: 1337764145988202357, guid: 5ef254d1a62975e4e87b12cc53cf45bc, type: 3}
   upgradeFX: {fileID: 1337764145988202357, guid: 5ef254d1a62975e4e87b12cc53cf45bc, type: 3}
+  sellFX: {fileID: 1337764145988202357, guid: 5ef254d1a62975e4e87b12cc53cf45bc, type: 3}
   turret: {fileID: 0}
   turretBlueprint:
     prefab: {fileID: 0}
     cost: 0
+    saleValue: 0
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
+    upgradedSaleValue: 0
   isUpgraded: 0

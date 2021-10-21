@@ -4,8 +4,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColour;
-    public ParticleSystem buildFX;
-    public ParticleSystem upgradeFX;
+    
 
     [HideInInspector]
     public GameObject turret;
@@ -53,7 +52,7 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, transform.position, Quaternion.identity);
         turret = _turret;
         turretBlueprint = blueprint;
-        Instantiate(buildFX, transform.position, Quaternion.identity);
+        Instantiate(buildManager.buildFX, transform.position, Quaternion.identity);
         
         
     }
@@ -73,10 +72,23 @@ public class Node : MonoBehaviour
 
         GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, transform.position, Quaternion.identity);
         turret = _turret;
-        Instantiate(upgradeFX, transform.position, Quaternion.identity);
+        Instantiate(buildManager.upgradeFX, transform.position, Quaternion.identity);
         isUpgraded = true;
     }
 
+    public void SellTurret()
+    {
+        if (isUpgraded)
+        {
+            PlayerStats.Money += turretBlueprint.upgradedSaleValue;
+        }
+            PlayerStats.Money += turretBlueprint.saleValue;
+        Instantiate(buildManager.sellFX, transform.position, Quaternion.identity);
+        Instantiate(buildManager.sellDebrisFX, transform.position+new Vector3 (0f,2.5f,0f), Quaternion.identity);
+        Destroy(turret);
+        turretBlueprint = null;
+        isUpgraded = false;
+    }
     private void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject()) { return; }
