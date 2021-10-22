@@ -5,13 +5,13 @@ public class GameHandler : MonoBehaviour
 
     public static bool gameEnded;
     public GameObject gameOverUI;
-    public GameObject fadingScene;
+    
 
     private void Start()
     {
         gameEnded = false;
         gameOverUI.SetActive(false);
-        fadingScene.SetActive(true);
+        
 
     }
 

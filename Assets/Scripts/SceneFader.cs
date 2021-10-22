@@ -8,13 +8,18 @@ public class SceneFader : MonoBehaviour
     public Image fadeImage;
     public AnimationCurve fadeCurve;
 
-    private void Start()
+    private void Awake()
     {
+        transform.GetChild(0).gameObject.SetActive(true);
+    }
+    private void Start()
+    {        
         StartCoroutine(FadeIn());
     }
     
     public void FadeTo(int scene)
     {
+      
       StartCoroutine(FadeOut(scene));
     }
 

@@ -578,9 +578,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1108424583, guid: 2c706b258e816674184c65c4260435c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2094403668172407677, guid: 2c706b258e816674184c65c4260435c1, type: 3}
       propertyPath: m_Name
       value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094403668172407677, guid: 2c706b258e816674184c65c4260435c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2094403668172407679, guid: 2c706b258e816674184c65c4260435c1, type: 3}
       propertyPath: m_RootOrder
