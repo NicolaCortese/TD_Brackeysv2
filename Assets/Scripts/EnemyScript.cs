@@ -48,8 +48,7 @@ public class EnemyScript : MonoBehaviour
         isAlive = false;
         PlayerStats.Money += moneyLoot;
         Instantiate<ParticleSystem>(deathFX, transform.position, Quaternion.identity);
-        WaveSpawner.EnemiesAlive--;
-        Debug.Log(WaveSpawner.EnemiesAlive);
+        WaveSpawner.EnemiesAlive--;        
         Destroy(gameObject);
 
     }

@@ -128,3 +128,4 @@ MonoBehaviour:
   HitFX: {fileID: 5646671097470837260, guid: 69bb5b2b3e0ee8f47bfab74ac66e91ef, type: 3}
   bulletSpeed: 15
   explosionRadius: 5
+  damage: 30

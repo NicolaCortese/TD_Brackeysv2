@@ -310,9 +310,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1852911502}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6756262395280005196, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Name
-      value: LevelButton (3)
+      value: LevelButton4
       objectReference: {fileID: 0}
     - target: {fileID: 8431581232052835583, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Text
@@ -704,8 +716,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 986846401}
   m_HandleRect: {fileID: 986846400}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.8156921
+  m_Value: 1.0000021
+  m_Size: 0.81318367
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -788,7 +800,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.04373064, y: 0.9067391}
   m_AnchorMax: {x: 0.04373064, y: 0.9067391}
-  m_AnchoredPosition: {x: 527.2025, y: -228.92398}
+  m_AnchoredPosition: {x: 527.2025, y: -292.51047}
   m_SizeDelta: {x: 1102.3623, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &603367027
@@ -1236,9 +1248,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1852911502}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6756262395280005196, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Name
-      value: LevelButton (5)
+      value: LevelButton6
       objectReference: {fileID: 0}
     - target: {fileID: 8431581232052835583, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Text
@@ -1765,9 +1789,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1852911502}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 6125621379315961125, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6756262395280005196, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Name
-      value: LevelButton (4)
+      value: LevelButton5
       objectReference: {fileID: 0}
     - target: {fileID: 8431581232052835583, guid: e26e43c2cc1900f469b01f8d573b9edc, type: 3}
       propertyPath: m_Text
