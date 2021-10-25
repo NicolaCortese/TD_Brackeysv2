@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 2605995911422785732, guid: 62a78e5a61fef46418ccd3c1e44d6d47, type: 3}
   startingHealth: 60
-  moneyLoot: 50
+  moneyLoot: 15
   startSpeed: 18
   speed: 10
   healthBar: {fileID: 297731976}

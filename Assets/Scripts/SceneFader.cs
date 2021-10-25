@@ -46,6 +46,7 @@ public class SceneFader : MonoBehaviour
             fadeImage.GetComponent<CanvasGroup>().alpha = a;
             yield return 0;
         }
+        WaveSpawner.EnemiesAlive = 0;
         SceneManager.LoadScene(scene);
         
     }   

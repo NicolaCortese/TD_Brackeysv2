@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
     [Header("Unity Stuff")]
     public Image healthBar;
 
+    private bool isAlive = true;
+
     private void Start()
     {
         speed = startSpeed;
@@ -30,19 +32,24 @@ public class EnemyScript : MonoBehaviour
 
     public void TakeDamage (float amount)
     {
-        currentHealth -= amount;
-        healthBar.fillAmount = currentHealth/startingHealth;
-        if (currentHealth <= Mathf.Epsilon)
+        if (isAlive)
         {
-            EnemyDeath();
+            currentHealth -= amount;
+            healthBar.fillAmount = currentHealth / startingHealth;
+            if (currentHealth <= Mathf.Epsilon)
+            {
+                EnemyDeath();
+            }
         }
     }
 
     private void EnemyDeath()
     {
+        isAlive = false;
         PlayerStats.Money += moneyLoot;
         Instantiate<ParticleSystem>(deathFX, transform.position, Quaternion.identity);
         WaveSpawner.EnemiesAlive--;
+        Debug.Log(WaveSpawner.EnemiesAlive);
         Destroy(gameObject);
 
     }

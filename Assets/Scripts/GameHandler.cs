@@ -5,12 +5,16 @@ public class GameHandler : MonoBehaviour
 
     public static bool gameEnded;
     public GameObject gameOverUI;
-    
+    public GameObject winUI;
+        
+    public int levelToUnlock = 2;
+    public SceneFader sceneFader;
 
     private void Start()
     {
         gameEnded = false;
         gameOverUI.SetActive(false);
+        winUI.SetActive(false);
         
 
     }
@@ -31,5 +35,13 @@ public class GameHandler : MonoBehaviour
     {
         gameEnded = true;
         gameOverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        gameEnded = true;
+        winUI.SetActive(true);
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        
     }
 }

@@ -8,6 +8,7 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
+        if (GameHandler.gameEnded) { return; }
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             Toggle();
