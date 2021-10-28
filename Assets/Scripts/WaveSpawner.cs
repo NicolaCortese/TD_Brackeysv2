@@ -18,7 +18,8 @@ public class WaveSpawner : MonoBehaviour
 
 
     private void Update() 
-    {        
+    {
+        if (GameHandler.gameEnded) { return; }
         if (EnemiesAlive > 0) { return; }
         if (waveNumber == waves.Length)
         {

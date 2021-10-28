@@ -5,7 +5,7 @@ public class GameHandler : MonoBehaviour
 
     public static bool gameEnded;
     public GameObject gameOverUI;
-    public GameObject winUI;
+    public GameObject winUI;    
         
     public int levelToUnlock = 2;
     public SceneFader sceneFader;
@@ -15,7 +15,8 @@ public class GameHandler : MonoBehaviour
         gameEnded = false;
         gameOverUI.SetActive(false);
         winUI.SetActive(false);
-        
+        GameOverOrWin.startingMoneyForRetry = PlayerStats.Money;
+        GameOverOrWin.startingLivesForRetry = PlayerStats.Lives;
 
     }
 
@@ -26,7 +27,11 @@ public class GameHandler : MonoBehaviour
         {
             EndGame();
         }
-        if(PlayerStats.Lives <= 0)
+        if (Input.GetKeyDown("r"))
+        {
+            WinLevel();
+        }
+        if (PlayerStats.Lives <= 0)
         {
             EndGame();
         }

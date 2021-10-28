@@ -7,6 +7,7 @@ public class SceneFader : MonoBehaviour
 {
     public Image fadeImage;
     public AnimationCurve fadeCurve;
+    
 
     private void Awake()
     {

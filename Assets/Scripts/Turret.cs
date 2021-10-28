@@ -25,6 +25,7 @@ public class Turret : MonoBehaviour
     public LineRenderer lineRenderer;
     public ParticleSystem laserImpactFX;
     public Light impactLight;
+    private bool isPlayingSFX = false;
 
     [Header("Unity Setup Fields")]
     public float turnSpeed = 10f;
@@ -35,6 +36,7 @@ public class Turret : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("CheckForTargets", 0f, 0.5f);
+        
     }
 
     void CheckForTargets()
@@ -73,6 +75,8 @@ public class Turret : MonoBehaviour
             {
                 if (lineRenderer.enabled)
                 {
+                    GetComponent<AudioSource>().Stop();
+                    isPlayingSFX = false;
                     lineRenderer.enabled = false;
                     laserImpactFX.Stop();
                     impactLight.enabled = false;
@@ -101,7 +105,13 @@ public class Turret : MonoBehaviour
 
     private void Lasering()
     {
+        if (!isPlayingSFX)
+        {
+            GetComponent<AudioSource>().Play();
+            isPlayingSFX = true;
+        }
         targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
+        targetEnemy.Slow(slowRate);
 
         if (!lineRenderer.enabled)
         {

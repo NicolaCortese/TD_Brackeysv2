@@ -8,10 +8,13 @@ public class GameOverOrWin : MonoBehaviour
     
     public Text wavesText;
     public SceneFader sceneFader;
+    public static int startingLivesForRetry = 20;
+    public static int startingMoneyForRetry = 250;
+    public static int startingWavesSurvivedForRetry = 0;
 
+    
     private void OnEnable()
-    {
-        
+    {       
         StartCoroutine(WavesSurvived());
     }
 
@@ -33,14 +36,19 @@ public class GameOverOrWin : MonoBehaviour
 
     public void Retry()
     {
+        PlayerStats.Lives = startingLivesForRetry;
+        PlayerStats.Money = startingMoneyForRetry;
+        PlayerStats.wavesSurvived = startingWavesSurvivedForRetry;
         sceneFader.FadeTo(SceneManager.GetActiveScene().buildIndex);
     } 
     public void NextLevel()
     {
+        PlayerStats.Money += 200;
         sceneFader.FadeTo(SceneManager.GetActiveScene().buildIndex+1);
     }
     public void SelectLevel()
     {
+        PlayerStats.Money += 250;
         sceneFader.FadeTo(1);
     }
     public void Menu() 

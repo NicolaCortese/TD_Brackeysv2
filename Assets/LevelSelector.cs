@@ -5,6 +5,7 @@ public class LevelSelector : MonoBehaviour
 {
     public SceneFader sceneFader;
     public Button[] levelButtons;
+    public AudioClip turretReload;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class LevelSelector : MonoBehaviour
     }
     public void Select (int levelNumber)
     {
+        GetComponent<AudioSource>().PlayOneShot(turretReload);
         sceneFader.FadeTo(levelNumber);
     }
 }

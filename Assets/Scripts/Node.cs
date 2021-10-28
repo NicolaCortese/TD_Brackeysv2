@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColour;
+    public AudioClip buildSFX;
+    public AudioClip sellSFX;
     
 
     [HideInInspector]
@@ -17,13 +19,14 @@ public class Node : MonoBehaviour
     private Color startColour;
 
     BuildManager buildManager;
-    
+    AudioSource audiosource;
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColour = rend.material.color;
         buildManager = BuildManager.instance;
+        audiosource = GetComponent<AudioSource>();
         
     }
 
@@ -53,8 +56,8 @@ public class Node : MonoBehaviour
         turret = _turret;
         turretBlueprint = blueprint;
         Instantiate(buildManager.buildFX, transform.position, Quaternion.identity);
-        
-        
+        audiosource.PlayOneShot(buildSFX);
+
     }
 
     public void UpgradeTurret()
@@ -73,6 +76,8 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, transform.position, Quaternion.identity);
         turret = _turret;
         Instantiate(buildManager.upgradeFX, transform.position, Quaternion.identity);
+        audiosource.PlayOneShot(buildSFX);
+        
         isUpgraded = true;
     }
 
@@ -85,6 +90,7 @@ public class Node : MonoBehaviour
             PlayerStats.Money += turretBlueprint.saleValue;
         Instantiate(buildManager.sellFX, transform.position, Quaternion.identity);
         Instantiate(buildManager.sellDebrisFX, transform.position+new Vector3 (0f,2.5f,0f), Quaternion.identity);
+        audiosource.PlayOneShot(sellSFX);
         Destroy(turret);
         turretBlueprint = null;
         isUpgraded = false;

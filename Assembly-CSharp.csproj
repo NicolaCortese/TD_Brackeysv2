@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\LivesUI.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
+    <Compile Include="Assets\backgroundMusic.cs" />
     <Compile Include="Assets\Scripts\Wave.cs" />
     <Compile Include="Assets\Scripts\GameOverOrWin.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\MoneyUI.cs" />
     <Compile Include="Assets\LevelSelector.cs" />
     <Compile Include="Assets\Scripts\TurretBlueprint.cs" />
+    <Compile Include="Assets\speedup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -13,11 +13,20 @@ public class PlayerStats : MonoBehaviour
 
     public static int wavesSurvived;
 
+    private void Awake()
+    {
+        GameObject[] playerStats = GameObject.FindGameObjectsWithTag("PlayerStats");
+        if (playerStats.Length>1) 
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         Money = startMoney;
         Lives = startLives;
-
         wavesSurvived = 0;
     }
     
