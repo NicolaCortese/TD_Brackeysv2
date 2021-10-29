@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
 
     public float startingHealth = 100;
     public int moneyLoot = 50;
+    public int damageToPlayer = 1;
     public float startSpeed = 10f;
     [HideInInspector] public float speed;
     private float currentHealth;

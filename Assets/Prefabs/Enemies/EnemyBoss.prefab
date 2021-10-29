@@ -364,6 +364,7 @@ MonoBehaviour:
   deathFX: {fileID: 2605995911422785732, guid: 76e0195321317734cbedc44efaf0e211, type: 3}
   startingHealth: 3000
   moneyLoot: 100
+  damageToPlayer: 5
   startSpeed: 6
   speed: 10
   healthBar: {fileID: 297731976}
