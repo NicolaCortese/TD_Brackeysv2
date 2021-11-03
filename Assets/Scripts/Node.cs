@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using GameAnalyticsSDK;
 
 public class Node : MonoBehaviour
 {
@@ -46,11 +47,12 @@ public class Node : MonoBehaviour
 
     void BuildTurret(TurretBlueprint blueprint)
     {
-        if (PlayerStats.Money < blueprint.cost)
-        {
-            Debug.Log("Not enough money!");
-            return;
-        }
+        if (PlayerStats.Money < blueprint.cost){return;}
+                
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Sink, "Gold", blueprint.cost, "Turret", blueprint.prefab.name);
+        
+        
+
         PlayerStats.Money -= blueprint.cost;
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, transform.position, Quaternion.identity);
         turret = _turret;
@@ -62,11 +64,11 @@ public class Node : MonoBehaviour
 
     public void UpgradeTurret()
     {
-        if (PlayerStats.Money < turretBlueprint.upgradeCost)
-        {
-            Debug.Log("Not enough money to upgrade!");
-            return;
-        }
+        if (PlayerStats.Money < turretBlueprint.upgradeCost){return;}
+
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Sink, "Gold", turretBlueprint.upgradeCost, "Turret", turretBlueprint.upgradedPrefab.name);
+
+
         PlayerStats.Money -= turretBlueprint.upgradeCost;
         
         //Gets rid of the old turret
@@ -86,8 +88,14 @@ public class Node : MonoBehaviour
         if (isUpgraded)
         {
             PlayerStats.Money += turretBlueprint.upgradedSaleValue;
+            GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Gold", turretBlueprint.upgradedSaleValue, "Turret", turretBlueprint.upgradedPrefab.name);
         }
+        else 
+        { 
             PlayerStats.Money += turretBlueprint.saleValue;
+            GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Gold", turretBlueprint.saleValue, "Turret", turretBlueprint.prefab.name);
+        }
+
         Instantiate(buildManager.sellFX, transform.position, Quaternion.identity);
         Instantiate(buildManager.sellDebrisFX, transform.position+new Vector3 (0f,2.5f,0f), Quaternion.identity);
         audiosource.PlayOneShot(sellSFX);

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.gameanalytics.sdk": {
+      "version": "https://github.com/GameAnalytics/GA-SDK-UNITY.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "70d3a74524cf7764018759d40d6411e3e7a5645e"
+    },
     "com.unity.collab-proxy": {
       "version": "1.5.7",
       "depth": 0,

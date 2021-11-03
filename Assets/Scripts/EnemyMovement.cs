@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int wavepointIndex = 0;
     private EnemyScript enemy;
+    [HideInInspector]public static int DamageAccumulatedToPlayer = 0;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
     private void EndPath()
     {
         PlayerStats.Lives -= enemy.damageToPlayer;
+        DamageAccumulatedToPlayer += enemy.damageToPlayer;
         WaveSpawner.EnemiesAlive--;
         Destroy(gameObject);
         return;

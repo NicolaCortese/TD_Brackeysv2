@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using GameAnalyticsSDK;
 
 public class SceneFader : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class SceneFader : MonoBehaviour
     IEnumerator FadeIn()
     {
         
+
         float t = 1f;
         while (t > 0)
         {
@@ -38,6 +40,7 @@ public class SceneFader : MonoBehaviour
     }
     IEnumerator FadeOut(int scene)
     {
+        
         
         float t = 0f;
         while (t < 1f)

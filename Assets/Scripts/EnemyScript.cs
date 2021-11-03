@@ -13,6 +13,7 @@ public class EnemyScript : MonoBehaviour
     public int damageToPlayer = 1;
     public float startSpeed = 10f;
     [HideInInspector] public float speed;
+    [HideInInspector] public static int moneyFromEnemiesKilled = 0;
     private float currentHealth;
 
     [Header("Unity Stuff")]
@@ -48,6 +49,7 @@ public class EnemyScript : MonoBehaviour
     {
         isAlive = false;
         PlayerStats.Money += moneyLoot;
+        moneyFromEnemiesKilled += moneyLoot;
         Instantiate<ParticleSystem>(deathFX, transform.position, Quaternion.identity);
         WaveSpawner.EnemiesAlive--;        
         Destroy(gameObject);

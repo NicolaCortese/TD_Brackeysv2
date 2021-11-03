@@ -14,7 +14,8 @@ public class GameOverOrWin : MonoBehaviour
 
     
     private void OnEnable()
-    {       
+    {
+        Time.timeScale = 1f;
         StartCoroutine(WavesSurvived());
     }
 
@@ -28,7 +29,7 @@ public class GameOverOrWin : MonoBehaviour
         {
             waves++;
             wavesText.text = waves.ToString();
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
         }
 
 

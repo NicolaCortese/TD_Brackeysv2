@@ -5,21 +5,91 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637691137149844661
-    m_Hash: 2003956774
+      ticks: 637715292323772974
+    m_Hash: 3828783535
   m_LockFileStatus:
     m_FilePath: C:/Users/nicol/Unity Games/BrackeysTD/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637691137276279623
-    m_Hash: 2889151785
+      ticks: 637715292915619607
+    m_Hash: 3038650636
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
+    - packageId: com.gameanalytics.sdk@https://github.com/GameAnalytics/GA-SDK-UNITY.git
+      testable: 0
+      isDirectDependency: 1
+      version: 7.2.1
+      source: 5
+      resolvedPath: C:\Users\nicol\Unity Games\BrackeysTD\Library\PackageCache\com.gameanalytics.sdk@70d3a74524
+      assetPath: Packages/com.gameanalytics.sdk
+      name: com.gameanalytics.sdk
+      displayName: GameAnalytics
+      author:
+        name: GameAnalytics
+        email: sdk@gameanalytics.com
+        url: https://www.gameanalytics.com
+      category: 
+      type: 
+      description: 'GameAnalytics collects and stores your data with no limits. 
+        You can then view your core KPI''s in order to see what areas of your game
+        need to improvements.  If you want to find out more about how gamers play,
+        then add in funnels, progression events and resource tracking. '
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - data
+      - analytics
+      - events
+      - funnels
+      - reporting
+      - dashboard
+      - tracking
+      - track
+      - analyse
+      - analyze
+      - bigdata
+      - mixpanel
+      - unreal
+      - google
+      - flurry
+      - unity
+      - segments
+      - realtime
+      - time
+      - player
+      - understand
+      - focus
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
     - packageId: com.unity.collab-proxy@1.5.7
       testable: 0
       isDirectDependency: 1

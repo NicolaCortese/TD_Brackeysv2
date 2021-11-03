@@ -11,4 +11,5 @@ public class FastForward : MonoBehaviour
         else
             Time.timeScale = 2f;
     }
+    
 }

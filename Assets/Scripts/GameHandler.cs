@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using GameAnalyticsSDK;
 
 public class GameHandler : MonoBehaviour
 {
@@ -17,29 +19,25 @@ public class GameHandler : MonoBehaviour
         winUI.SetActive(false);
         GameOverOrWin.startingMoneyForRetry = PlayerStats.Money;
         GameOverOrWin.startingLivesForRetry = PlayerStats.Lives;
-
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Scene_0" + SceneManager.GetActiveScene().buildIndex, "Stage_01", "Level_Progress");
     }
 
     void Update()
     {
-        if (gameEnded) { return; }
-        if (Input.GetKeyDown("e"))
-        {
-            EndGame();
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            WinLevel();
-        }
+        if (gameEnded) { return; }        
         if (PlayerStats.Lives <= 0)
         {
-            EndGame();
+            LostLevel();
         }
     }
-    void EndGame()
+    void LostLevel()
     {
         gameEnded = true;
         gameOverUI.SetActive(true);
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Gold", EnemyScript.moneyFromEnemiesKilled, "Enemy", "Enemies");
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Sink, "Lives", EnemyMovement.DamageAccumulatedToPlayer, "Enemy", "Enemies");
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, "Scene_0" + SceneManager.GetActiveScene().buildIndex, "Stage_01", "Level_Progress");
+        
     }
 
     public void WinLevel()
@@ -47,6 +45,8 @@ public class GameHandler : MonoBehaviour
         gameEnded = true;
         winUI.SetActive(true);
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
-        
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Gold", EnemyScript.moneyFromEnemiesKilled, "Enemy", "Enemies");
+        GameAnalytics.NewResourceEvent(GAResourceFlowType.Sink, "Lives", EnemyMovement.DamageAccumulatedToPlayer, "Enemy", "Enemies");
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Scene_0" + SceneManager.GetActiveScene().buildIndex, "Stage_01", "Level_Progress");
     }
 }
